@@ -1,6 +1,3 @@
 #!/usr/bin/python3
-alphabet = range(97, 123)
-alphabet_list = list(alphabet)
-for characters in alphabet_list:
-    a = chr(characters)
-    print(f"{a}", end='')
+for i in range(97, 123):
+    print(f"{chr(i)}", end='')
