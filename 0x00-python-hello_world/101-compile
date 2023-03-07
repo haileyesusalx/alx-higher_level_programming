@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "Compiling main.py ..."
+python3 -m compileall main.py
+mv __pycache__/main.cpython-38.pyc main.pyc
+rm -rf __pycache__
