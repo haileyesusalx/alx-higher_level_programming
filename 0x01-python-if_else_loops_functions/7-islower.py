@@ -1,11 +1,9 @@
 #!/usr/bin/python3
 def islower(string):
     for char in string:
-        if not ('a' <= char <= 'z'):
-            return False
-        elif not ('' == char):
+        if 'a' <= char <= 'z':
             return True
-    return True
+    return False
 
 
 result = islower("z")
