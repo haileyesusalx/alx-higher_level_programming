@@ -14,6 +14,9 @@ elif number > 0 and last_digit == 0:
 elif number < 0:
     comparison_string = "and is less than 6 and not 0"
     print(f"Last digit of {number} is {last_digit2} {comparison_string}")
+elif number == 0:
+    comparison_string = "and is 0"
+    print(f"Last digit of {number} is {number} {comparison_string}")
 else:
     comparison_string = "and is less than 6 and not 0"
     print(f"Last digit of {number} is {last_digit} {comparison_string}")
