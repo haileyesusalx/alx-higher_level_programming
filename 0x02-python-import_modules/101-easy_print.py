@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-text = input("#pythoniscool")
+exec("'from os import system; system('echo #pythoniscool')"')
