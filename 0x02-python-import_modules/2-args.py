@@ -11,5 +11,5 @@ if __name__ == "__main__":
     elif size == 0:
         print("{} arguments.".format(size))
     else:
-         print("{} argument:".format(size))
-         print("{}: {}".format(size, arg[1]))
+        print("{} argument:".format(size))
+        print("{}: {}".format(size, arg[1]))
