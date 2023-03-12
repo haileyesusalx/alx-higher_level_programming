@@ -1,4 +1,2 @@
-ython3 sys.stdout.write(compiled_file | main.pyc)
-python3 -m compileall main.py
-sys.stdout.write(compiled_file | main.pyc)
-echo "Compiling main.py ..."
+#!/bin/bash
+./main.py
