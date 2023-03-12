@@ -1,12 +1,2 @@
-#!/usr/bin/python3
-import os
-import py_compile
-
-# Get the filename from the environment variable
-filename = os.getenv('PYFILE')
-
-# Compile the file
-py_compile.compile(filename, cfile=filename + 'c')
-
-# Print a message indicating the compilation is complete
-print(f"Compiling {filename} ...")
+#!/bin/bash
+python3 -m compileall -b $PYFILE i
