@@ -1,5 +1,4 @@
-#!/bin/bash
-echo "Compiling main.py ..."
+ython3 sys.stdout.write(compiled_file | main.pyc)
 python3 -m compileall main.py
-mv __pycache__/main.cpython-38.pyc main.pyc
-rm -rf __pycache__
+sys.stdout.write(compiled_file | main.pyc)
+echo "Compiling main.py ..."
