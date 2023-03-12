@@ -1,2 +1,2 @@
-#!/bin/python3
-print('Beautiful better than ugly,Explicit better than implicit,Simple is better')
+#!/usr/bin/python3
+print('Beautiful better than ugly.\n''Explicit better than implicit.')
