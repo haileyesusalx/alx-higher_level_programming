@@ -65,10 +65,11 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ""
         else:
-            return "\n".join([str(self.print_symbol) * self.width] * self.height)
+            return "\n".join(
+                    [str(self.print_symbol) * self.width] * self.height)
 
     def __repr__(self):
-        """Returns the string representation of the rectangle to recreate a new instance"""
+        """ representation of the rectangle to recreate a new instance"""
         return "Rectangle({}, {})".format(self.width, self.height)
 
     @staticmethod
