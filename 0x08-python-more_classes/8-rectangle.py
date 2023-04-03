@@ -33,7 +33,7 @@ class Rectangle:
                           for i in range(self.height)])
 
     def __repr__(self):
-        """Returns a string representation of a rectangle that can be used to create a new instance"""
+        """Returns a rectangle that can be used to create a new instance"""
 
         return "Rectangle({:d}, {:d})".format(self.width, self.height)
 
