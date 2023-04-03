@@ -1,14 +1,8 @@
-#!/usr/bin/python3
-""" Rectangle class with width and height """
-
-
 class Rectangle:
-    """ retrieve value at new class created """
     def __init__(self, width=0, height=0):
-        self.__height = height
-        self.__width = width
+        self.width = width
+        self.height = height
 
-    """ define width of rectangle """
     @property
     def width(self):
         return self.__width
@@ -22,7 +16,6 @@ class Rectangle:
         else:
             self.__width = value
 
-    """ define height of rectangle """
     @property
     def height(self):
         return self.__height
@@ -36,13 +29,21 @@ class Rectangle:
         else:
             self.__height = value
 
-    """ calculate area of rectangle """
     def area(self):
-        return (self.__width * self.__height)
+        return self.__width * self.__height
 
-    """ calculate perimeter of rectangle """
     def perimeter(self):
         if self.__width == 0 or self.__height == 0:
             return 0
-        else:
-            return (2 * (self.__width + self.__height))
+        return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        return "\n".join(["#" * self.__width] * self.__height)
+
+    def __repr__(self):
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        print("Bye rectangle...")
