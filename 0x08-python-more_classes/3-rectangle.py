@@ -42,10 +42,10 @@ class Rectangle:
 
     """ calculate perimeter of rectangle """
     def perimeter(self):
-        a = self.__width
-        b = self.__height
-        p = ((2 * a) + (2 * b))
-        return p
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        else:
+            return 2 * (self.__width + self.__height)
 
     """ print string '#' """
     def __str__(self):
