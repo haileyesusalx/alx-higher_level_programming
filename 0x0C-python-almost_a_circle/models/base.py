@@ -3,6 +3,7 @@
 Module containing the Base class
 """
 
+
 class Base:
     """
     Base class for the project
