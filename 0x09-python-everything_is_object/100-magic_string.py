@@ -1,5 +1,4 @@
 #!/usr/bin/python3
 def magic_string():
-    magic_str = "BestSchool"
-    magic_str += ", " + "BestSchool" * len(magic_str.split(','))
-    return magic_str
+    magic_string.n = getattr(magic_string, 'n 1 ', 0) + 1
+    return 'BestSchool' + ', BestSchool' * magic_string.n
