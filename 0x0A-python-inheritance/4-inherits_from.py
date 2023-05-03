@@ -7,7 +7,8 @@ that inherited (directly or indirectly) from the specified class
 
 def inherits_from(obj, a_class):
     """
-    Returns True if obj is an instance of a class that inherited (directly or indirectly)
+    Returns True if obj is an instance of a class that
+    inherited (directly or indirectly)
     from the specified class, otherwise False.
 
     Args:
@@ -17,6 +18,6 @@ def inherits_from(obj, a_class):
     Return:
     - True if obj is an instance of a subclass of a_class, False otherwise
     """
-    if issubclass(type(obj),a_class) and type(obj) != a_class:
+    if issubclass(type(obj), a_class) and type(obj) != a_class:
         return True
     return False
