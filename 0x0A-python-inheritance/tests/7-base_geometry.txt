@@ -1,0 +1,26 @@
+#!/usr/bin/python3
+"""
+Unittest for BaseGeometry class
+"""
+import unittest
+from models.base_geometry import BaseGeometry
+
+class TestBaseGeometry(unittest.TestCase):
+    """Class for testing BaseGeometry"""
+
+    def test_area(self):
+        bg = BaseGeometry()
+        with self.assertRaises(Exception) as e:
+            bg.area()
+        self.assertEqual(str(e.exception), "area() is not implemented")
+
+    def test_integer_validator(self):
+        bg = BaseGeometry()
+        self.assertRaises(TypeError, bg.integer_validator, "name", "John")
+        self.assertRaises(ValueError, bg.integer_validator, "age", 0)
+        self.assertRaises(ValueError, bg.integer_validator, "distance", -4)
+        self.assertIsNone(bg.integer_validator("my_int", 12))
+        self.assertIsNone(bg.integer_validator("width", 89))
+
+if __name__ == '__main__':
+    unittest.main()
