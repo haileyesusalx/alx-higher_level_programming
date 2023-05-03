@@ -1,22 +1,35 @@
 #!/usr/bin/python3
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+"""
+Test cases for BaseGeometry class
+"""
 
-bg = BaseGeometry()
+import unittest
+from models.base_geometry import BaseGeometry
 
-bg.integer_validator("my_int", 12)
-bg.integer_validator("width", 89)
 
-try:
-    bg.integer_validator("name", "John")
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+class TestBaseGeometry(unittest.TestCase):
+    """
+    TestBaseGeometry class
+    """
 
-try:
-    bg.integer_validator("age", 0)
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+    def test_area(self):
+        """
+        Test area method
+        """
+        bg = BaseGeometry()
+        with self.assertRaises(Exception) as e:
+            bg.area()
+        self.assertEqual(str(e.exception), "area() is not implemented")
 
-try:
-    bg.integer_validator("distance", -4)
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+    def test_integer_validator(self):
+        """
+        Test integer_validator method
+        """
+        bg = BaseGeometry()
+        self.assertRaises(TypeError, bg.integer_validator, "name", "not_int")
+        self.assertRaises(ValueError, bg.integer_validator, "name", 0)
+        self.assertRaises(ValueError, bg.integer_validator, "name", -1)
+
+
+if __name__ == '__main__':
+    unittest.main()
