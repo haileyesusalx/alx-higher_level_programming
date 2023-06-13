@@ -1,12 +1,9 @@
 #!/usr/bin/node
-function numberArgument () {
-  const args = process.argv.slice(2);
-  const numArgs = args.length;
-  if (numArgs === 0) {
-    console.log('No argument');
-  } else {
-    console.log(args[0]);
-  }
-}
 
-numberArgument();
+const arg = process.argv[2];
+
+if (arg === undefined) {
+    console.log("no argument");
+} else {
+    console.log(arg);
+}
