@@ -14,8 +14,14 @@ function largestNumber () {
       result = num;
     }
   }
-
-  console.log(result);
+  let result2 = parseInt(args[0]);
+  for (let i = 0; i < args.length; i++) {
+    const num = parseInt(args[i]);
+    if (!isNaN(num) && num < result && num > result2) {
+      result2 = num;
+    }
+  }
+  console.log(result2);
 }
 
 largestNumber();
