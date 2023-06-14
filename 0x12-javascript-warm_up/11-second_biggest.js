@@ -1,27 +1,26 @@
 #!/usr/bin/node
-function largestNumber () {
-  const args = process.argv.slice(2);
 
-  if (args.length <= 1) {
-    console.log(0);
-    return;
+const args = process.argv.slice(2);
+
+if (args.length <= 1) {
+  console.log(0);
+} else {
+  let first = parseInt(args[0]);
+  let second = parseInt(args[1]);
+
+  if (second > first) {
+    [first, second] = [second, first];
   }
 
-  let result = parseInt(args[0]);
-  for (let i = 0; i < args.length; i++) {
+  for (let i = 2; i < args.length; i++) {
     const num = parseInt(args[i]);
-    if (!isNaN(num) && num > result) {
-      result = num;
+    if (num > first) {
+      second = first;
+      first = num;
+    } else if (num > second && num !== first) {
+      second = num;
     }
   }
-  let result2 = parseInt(args[0]);
-  for (let i = 0; i < args.length; i++) {
-    const num = parseInt(args[i]);
-    if (!isNaN(num) && num < result && num > result2) {
-      result2 = num;
-    }
-  }
-  console.log(result2);
+
+  console.log(second);
 }
-
-largestNumber();
