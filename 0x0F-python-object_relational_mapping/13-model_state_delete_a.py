@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Deletes all State objects with a name containing the letter a from the database hbtn_0e_6_usa
+Deletes all State objects with a name containing the
+letter a from the database hbtn_0e_6_usa
 """
 
 import sys
@@ -11,7 +12,8 @@ from sqlalchemy.orm import sessionmaker
 if __name__ == "__main__":
     # Check if the correct number of arguments is provided
     if len(sys.argv) != 4:
-        print("Usage: ./13-model_state_delete_a.py <username> <password> <database>")
+        print("Usage: ./13-model_state_delete_a.py <username> <password>"
+              "<database>")
         sys.exit(1)
 
     # Extract the command line arguments
