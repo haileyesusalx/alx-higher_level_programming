@@ -11,7 +11,8 @@ from sqlalchemy.orm import sessionmaker
 if __name__ == "__main__":
     # Check if the correct number of arguments is provided
     if len(sys.argv) != 4:
-        print("Usage: ./11-model_state_insert.py <username> <password> <database>")
+        print("Usage: ./11-model_state_insert.py <username> <password> "
+              "<database>")
         sys.exit(1)
 
     # Extract the command line arguments
@@ -23,6 +24,9 @@ if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format(username, password, database),
                            pool_pre_ping=True)
+
+    # Create all tables in the database
+    Base.metadata.create_all(engine)
 
     # Create a session factory
     Session = sessionmaker(bind=engine)
