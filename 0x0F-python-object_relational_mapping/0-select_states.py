@@ -8,7 +8,8 @@ import sys
 
 if __name__ == "__main__":
     """
-    Connects to a MySQL server and lists all states from the specified database.
+    Connects to a MySQL server and lists all states from the
+    specified database.
     """
     # Get command line arguments
     username = sys.argv[1]
@@ -16,7 +17,8 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     # Connect to MySQL server
-    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+    db = MySQLdb.connect(host="localhost", port=3306, user=username,
+                         passwd=password, db=database)
 
     # Create a cursor object to execute queries
     cursor = db.cursor()
