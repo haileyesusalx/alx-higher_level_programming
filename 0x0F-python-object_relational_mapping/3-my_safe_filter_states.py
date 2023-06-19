@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script that takes arguments and displays all values in the states table of hbtn_0e_0_usa
+Script that takes arguments and displays all values
+in the states table of hbtn_0e_0_usa
 where the name matches the argument (safe from MySQL injection).
 """
 
@@ -19,7 +20,8 @@ if __name__ == "__main__":
     state_name = sys.argv[4]
 
     # Connect to MySQL server
-    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+    db = MySQLdb.connect(host="localhost", port=3306, user=username,
+                         passwd=password, db=database)
 
     # Create a cursor object to execute queries
     cursor = db.cursor()
