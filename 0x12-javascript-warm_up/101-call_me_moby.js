@@ -1,7 +1,7 @@
 #!/usr/bin/node
-function addMeMaybe(number, theFunction) {
-  number++;
-  theFunction(number);
-}
-
-module.exports.addMeMaybe = addMeMaybe;
+exports.callMeMoby = function (x, theFunction) {
+  if (x > 0) {
+    theFunction();
+    exports.callMeMoby(x - 1, theFunction);
+  }
+};
