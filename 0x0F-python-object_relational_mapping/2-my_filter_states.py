@@ -6,6 +6,7 @@ Lists states with a given name from the database hbtn_0e_0_usa.
 import MySQLdb
 import sys
 
+
 def main():
     """
     Connects to a MySQL server and displays all values in the states table
@@ -36,6 +37,7 @@ def main():
     # Close cursor and database connection
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     main()
