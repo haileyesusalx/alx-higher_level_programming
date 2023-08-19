@@ -1,12 +1,16 @@
 #!/usr/bin/python3
 """
-Lists all states from the database hbtn_0e_0_usa.
+Script that lists all states from the database hbtn_0e_0_usa.
 """
 
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
+    """
+    Connects to a MySQL server and lists all states from the
+    specified database.
+    """
     # Get command line arguments
     username = sys.argv[1]
     password = sys.argv[2]
@@ -19,7 +23,7 @@ if __name__ == "__main__":
     # Create a cursor object to execute queries
     cursor = db.cursor()
 
-    # Execute query to select all states and order by id
+    # Execute the query to select all states and order by id
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
     # Fetch all the rows and print them
