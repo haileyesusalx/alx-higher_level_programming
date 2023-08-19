@@ -6,7 +6,7 @@ Lists states with a given name from the database hbtn_0e_0_usa.
 import MySQLdb
 import sys
 
-if __name__ == "__main__":
+def main():
     """
     Connects to a MySQL server and displays all values in the states table
     where the name matches the provided argument.
@@ -36,3 +36,6 @@ if __name__ == "__main__":
     # Close cursor and database connection
     cursor.close()
     db.close()
+
+if __name__ == "__main__":
+    main()
