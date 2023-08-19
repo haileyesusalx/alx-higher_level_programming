@@ -7,6 +7,10 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
+    """
+    Connects to a MySQL server and displays all values in the states table
+    where the name matches the provided argument.
+    """
     # Get command line arguments
     username = sys.argv[1]
     password = sys.argv[2]
