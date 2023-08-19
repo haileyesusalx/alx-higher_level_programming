@@ -2,12 +2,17 @@
 """
 Lists all states with a name starting
 with N (upper N) from the database hbtn_0e_0_usa.
+
 """
 
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
+    """
+    Connects to a MySQL server and lists all states which have a name starting with N from the
+    specified database.
+    """
     # Get command line arguments
     username = sys.argv[1]
     password = sys.argv[2]
