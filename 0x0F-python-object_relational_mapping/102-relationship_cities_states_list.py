@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all City objects from the database hbtn_0e_101_usa
+This script lists all City objects from the database hbtn_0e_101_usa.
 """
 
 import sys
@@ -9,22 +9,31 @@ from sqlalchemy.orm import sessionmaker
 from relationship_state import Base, State
 from relationship_city import City
 
-
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: ./102-relationship_cities_states_list.py <username> <password> <database>")
-        sys.exit(1)
+    """
+    Connects to a MySQL server, retrieves and prints the City data with linked
+    """
+    # Get command line arguments
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
-    username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
-    engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}')
-
+    # Connect to MySQL server
+    engine = create_engine(
+        f'mysql+mysqldb://{username}:{password}@localhost/{database}',
+        pool_pre_ping=True
+    )
     Base.metadata.create_all(engine)
+
+    # Create a session
     Session = sessionmaker(bind=engine)
     session = Session()
 
+    # Query and print City data with linked State
     cities = session.query(City).order_by(City.id).all()
-
     for city in cities:
-        print(f"{city.id}: {city.name} -> {city.state.name}")
+        city_name = city.name
+        state_name = city.state.name
+        print(f"{city.id}: {city_name} -> {state_name}")
 
     session.close()
