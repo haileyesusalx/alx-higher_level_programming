@@ -1,4 +1,13 @@
 #!/usr/bin/python3
+"""
+This script sends a POST request to a given URL with an email parameter and displays the response body.
+
+Usage: ./6-post_email.py <URL> <email>
+
+Arguments:
+    URL (str): The URL to which the POST request will be sent.
+    email (str): The email address to be sent as a parameter.
+"""
 import requests
 import sys
 
