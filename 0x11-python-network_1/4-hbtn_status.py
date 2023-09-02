@@ -2,9 +2,13 @@
 """fetches https://intranet.hbtn.io/status."""
 import requests
 
-
 if __name__ == "__main__":
-    r = requests.get("https://intranet.hbtn.io/status")
+    url = 'https://alx-intranet.hbtn.io/status'
+
+    # Send a GET request to the URL
+    response = requests.get(url)
+
+    # Display the response body in the specified format
     print("Body response:")
-    print("     - type:", type(r.text))
-    print("     - content:", r.text)
+    print("\t- type:", type(response.text))
+    print("\t- content:", response.text)
