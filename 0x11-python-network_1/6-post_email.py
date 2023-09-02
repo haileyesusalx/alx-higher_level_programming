@@ -12,6 +12,6 @@ if __name__ == "__main__":
     data = {"email": email}
 
     response = requests.post(url, data=data)
-    
+
     # Extract and print the email from the response content
     print("Your email is: {}".format(response.text))
