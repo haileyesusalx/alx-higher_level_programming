@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-""" POST request to the passed URL with the email as a parameter,
-and finally displays the body of the response.
-"""
-
+'''This script takes a URL and an email address as arguments,
+sends a POST request with the email as a parameter,
+and displays the email address from the response.
+'''
 import sys
 import requests
 
@@ -12,4 +12,6 @@ if __name__ == "__main__":
     data = {"email": email}
 
     response = requests.post(url, data=data)
-    print("Your email is: {}".format(response))
+    
+    # Extract and print the email from the response content
+    print("Your email is: {}".format(response.text))
